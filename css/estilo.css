@@ -84,7 +84,6 @@ video {
   text-align: center;
   display: table-cell;
   vertical-align: middle;
-  /*padding: 0 2em;*/
 }
 
 h1 {
@@ -122,6 +121,29 @@ li{
 a{
 	color: #3E2C4A;
 }
+
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
 @media only screen and (max-width: 500px) {
   html {
     font-size: .8em;
@@ -132,5 +154,15 @@ a{
   }
   li{
     margin: 0 .45em;
+  }
+  .fa-lg{
+    text-align: center;
+    font-size: 2.5em;
+  }
+  li:nth-child(5) {
+    margin-left: 4em;
+  }
+  li:nth-child(1) {
+    margin-left: 1em;
   }
 }
