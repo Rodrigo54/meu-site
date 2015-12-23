@@ -1,7 +1,3 @@
-//var pngquant = require('imagemin-pngquant');
-//var mozjpeg = require('imagemin-mozjpeg');
-//var gifsicle = require('imagemin-gifsicle');
-
 module.exports = function(grunt) {
 
   // Project configuration.
@@ -9,7 +5,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     ftpush: {
-      build: {
+      rodrigoalves: {
         auth: {
           host: 'ftp.rodrigoalves.me',
           port: 21,
@@ -36,7 +32,7 @@ module.exports = function(grunt) {
           'controle_lab'
         ]
       },
-      build2: {
+      rodrigom: {
         auth: {
           host: 'ftp.rodrigom.tk',
           port: 21,
@@ -70,7 +66,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-ftpush');
 
   // Default task(s).
-  grunt.registerTask('ftp1','ftpush:build');
-  grunt.registerTask('ftp2','ftpush:build2');
+  grunt.registerTask('ftp1','ftpush:rodrigoalves');
+  grunt.registerTask('ftp2','ftpush:rodrigom');
+  grunt.registerTask('ftp','ftpush');
 
 };
