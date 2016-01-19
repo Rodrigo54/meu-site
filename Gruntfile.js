@@ -4,6 +4,26 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
+    excluir: [
+      '**/.DS_Store',
+      '**/Thumbs.db',
+      '.git',
+      'README.md',
+      'node_modules',
+      'grunt',
+      'grunt.cmd',
+      'package.json',
+      'Gruntfile.js',
+      '.ftppass',
+      '.gitattributes',
+      '.gitignore',
+      '.grunt'
+    ],
+    manter: [
+      'controle_lab',
+      'monitoria'
+    ],
+
     ftpush: {
       rodrigoalves: {
         auth: {
@@ -13,24 +33,8 @@ module.exports = function(grunt) {
         },
         src: './',
         dest: './',
-        exclusions: [
-          '**/.DS_Store',
-          '**/Thumbs.db',
-          '.git',
-          'README.md',
-          'node_modules',
-          'grunt',
-          'grunt.cmd',
-          'package.json',
-          'Gruntfile.js',
-          '.ftppass',
-          '.gitattributes',
-          '.gitignore',
-          '.grunt'
-        ],
-        keep: [
-          'controle_lab'
-        ]
+        exclusions:'<%= excluir %>',
+        keep: '<%= manter %>'
       },
       rodrigom: {
         auth: {
@@ -40,24 +44,8 @@ module.exports = function(grunt) {
         },
         src: './',
         dest: './',
-        exclusions: [
-          '**/.DS_Store',
-          '**/Thumbs.db',
-          '.git',
-          'README.md',
-          'node_modules',
-          'grunt',
-          'grunt.cmd',
-          'package.json',
-          'Gruntfile.js',
-          '.ftppass',
-          '.gitattributes',
-          '.gitignore',
-          '.grunt'
-        ],
-        keep: [
-          'controle_lab'
-        ]
+        exclusions:'<%= excluir %>',
+        keep: '<%= manter %>'
       }
     },
   });
