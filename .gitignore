@@ -58,3 +58,4 @@ $RECYCLE.BIN/
 .ftppass
 
 node_modules
+.vscode
