@@ -1,3 +1,9 @@
+import $ from 'jquery/dist/jquery.slim';
+window.jQuery = $;
+window.$ = $;
+import 'typed.js';
+import './estilo.css'
+
 var min_w = 300;
 var vid_w_orig;
 var vid_h_orig;
