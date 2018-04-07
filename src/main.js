@@ -1,8 +1,8 @@
 import $ from 'jquery/dist/jquery.slim';
 window.jQuery = $;
 window.$ = $;
-import 'typed.js';
-import './estilo.css'
+import Typed from 'typed.js';
+import './estilo.css';
 
 var min_w = 300;
 var vid_w_orig;
@@ -38,7 +38,7 @@ function fitVideo() {
 };
 
 $(window).ready(function(){
-  $(".texto").typed({
+  const typed = new Typed(".texto", {
     strings: ["WebMaster", "Designer", "Geek","Rodrigo"],
     typeSpeed: 100,
     startDelay: 10,
