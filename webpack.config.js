@@ -19,22 +19,36 @@ module.exports = {
         rules: [
             {
                 test: /\.tsx?$/,
+                exclude: /node_modules/,
                 use: 'ts-loader',
-                exclude: /node_modules/
             },
             {
-                test: /\.css$/,
+                test: /\.(css|scss)$/,
+                exclude: [/node_modules/],
                 use: ExtractTextPlugin.extract({
-                    loader: 'css-loader',
-                    options: {
-                        url: false,
-                        minimize: true,
-                        sourceMap: true
-                    }
+                    fallback: 'style-loader',
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                minimize: true || {/* CSSNano Options */ }
+                            }
+                        },
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                plugins: () => [require('autoprefixer')]
+                            }
+                        },
+                        {
+                            loader: 'sass-loader'
+                        }
+                    ]
                 })
             }
         ]
     },
+
     optimization: {
         minimize: true,
         minimizer: [
@@ -71,6 +85,6 @@ module.exports = {
             { from: 'src/videos/**/*', to: 'videos/', flatten: true },
             { from: 'src/_redirects', to: './', flatten: true }
         ]),
-        new ExtractTextPlugin("estilo.css"),
+        new ExtractTextPlugin("[name].css"),
     ]
 };

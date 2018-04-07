@@ -1,0 +1,153 @@
+$shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+$colorBase:  hsl(300, 100%, 30%);
+
+* {
+  box-sizing: border-box;
+  &:before, &:after {
+    box-sizing: inherit;
+  }
+}
+
+
+html {
+  background: #000;
+  font: normal .9em/1em "Ubuntu", "Helvetica Neue", Arial, Helvetica, sans-serif;
+  color: #fff;
+  text-align: center;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.video-viewport {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  video {
+    display: block;
+    position: absolute;
+  }
+}
+
+
+.fullsize-video-bg {
+  height: 100%;
+  overflow: hidden;
+  &::before{
+    content: "";
+    background: rgba(lighten($colorBase, 28%), 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  &::after{
+    content: "";
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACJJREFUeNpiZGBg8AVihv///28G0UwMaIARKIMigKECIMAASJsHAYcd2RAAAAAASUVORK5CYII=);
+    background-size: 2px 2px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+  .inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 25px;
+    position: relative;
+    z-index: 2;
+    text-shadow: $shadow;
+  }
+}
+
+h1 {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 2.5em;
+  line-height: .9;
+  font-weight: 900;
+  letter-spacing: -.025em;
+  text-transform: uppercase;
+  margin-bottom: .5em;
+  & + p {
+    font-family: 'Handlee', cursive;
+    font-size: 1.6em;
+  }
+}
+
+img{
+	border-radius: 50%;
+  width: 200px;
+  box-shadow: $shadow;
+}
+
+ul{
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+  min-width: 335px;
+  display: flex;
+  flex-direction: row;  
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  li{
+    float: left;
+    margin: 0 2.5px;
+    a{
+      color: desaturate(darken($colorBase, 10%), 75%);
+      .fa-lg{
+        @media only screen and (min-width: 1024px) {          
+          font-size: 1.5em;
+        }
+        text-align: center;
+        font-size: 2.5em;
+      }
+    }
+  }
+}
+
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .video {
+    width: auto;
+    height: 100%;
+  }
+}

@@ -1,5 +1,5 @@
 import * as Typed from 'typed.js';
-import './estilo.css';
+import './estilo.scss';
 
 addEventListener('DOMContentLoaded', () => {
   const typed = new Typed(".texto", {
