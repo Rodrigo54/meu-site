@@ -32,6 +32,10 @@ body {
   height: 100%;
   overflow: hidden;
   z-index: -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 video {
@@ -47,7 +51,7 @@ video {
 
 .fullsize-video-bg:before {
   content: "";
-  background: rgba(185,95,3,0.25);
+  background: rgba(255, 0, 165, 0.1);
   position: absolute;
   top: 0;
   left: 0;
@@ -144,7 +148,7 @@ a{
     100% { opacity:1; }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 900px) {
   html {
     font-size: .8em;
   }
@@ -164,5 +168,19 @@ a{
   }
   li:nth-child(1) {
     margin-left: 1em;
+  }
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .video {
+    width: auto;
+    height: 100%;
   }
 }

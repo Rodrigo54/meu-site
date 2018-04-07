@@ -38,7 +38,6 @@
     "webpack-dev-server": "^3.1.1"
   },
   "dependencies": {
-    "jquery": "^3.3.1",
     "typed.js": "^2.0.6"
   }
 }
