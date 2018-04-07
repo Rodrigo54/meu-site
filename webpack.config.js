@@ -60,7 +60,8 @@ module.exports = {
             }
         }),
         new CopyWebpackPlugin([
-            { from: 'src/videos/**/*', to: 'videos/', flatten: true }
+            { from: 'src/videos/**/*', to: 'videos/', flatten: true },
+            { from: 'src/_redirects', to: './', flatten: true }
         ]),
         new ExtractTextPlugin("estilo.css"),
     ]
