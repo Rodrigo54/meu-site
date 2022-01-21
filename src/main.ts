@@ -1,4 +1,4 @@
-import * as Typed from 'typed.js';
+import Typed from 'typed.js';
 import './estilo.scss';
 
 addEventListener('DOMContentLoaded', () => {

@@ -1,18 +1,12 @@
 {
-    "compilerOptions": {
-        "outDir": "./dist/",
-        "noImplicitAny": true,
-        "module": "es2015",
-        "moduleResolution": "node",
-        "target": "es5",
-        "allowJs": true,
-        "lib": [
-            "es2017",
-            "dom"
-        ],
-    },
-    "files": [
-        "typings.d.ts",
-        "src/main.ts"
-    ]
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "module": "ES6",
+    "moduleResolution": "node",
+    "target": "ESNext",
+    "allowJs": true,
+    "lib": ["es2017", "dom"]
+  },
+  "files": ["src/main.ts"]
 }
