@@ -1,4 +1,4 @@
-# rodrigoalves.me :globe_with_meridians:
+# rodrigoalves.dev :globe_with_meridians:
 
 Meu web site pessoal
 
