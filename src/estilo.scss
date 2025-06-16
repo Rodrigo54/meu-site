@@ -1,5 +1,9 @@
-$shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-$colorBase:  hsl(300, 100%, 18%);
+:root {
+  --shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  --colorBase: hsl(250, 50%, 50%);
+  --colorBaseDark: color-mix(in srgb, var(--colorBase), 12% black);
+  --colorBaseLight: color-mix(in srgb, var(--colorBase), 12% white);
+}
 
 * {
   box-sizing: border-box;
@@ -45,7 +49,8 @@ body {
   overflow: hidden;
   &::before{
     content: "";
-    background: rgba(darken($colorBase, 12%), 0.5);
+    background: var(--colorBaseDark);
+    opacity: 0.2;
     position: absolute;
     top: 0;
     left: 0;
@@ -63,7 +68,7 @@ body {
     padding: 0 25px;
     position: relative;
     z-index: 2;
-    text-shadow: $shadow;
+    text-shadow: var(--shadow);
   }
 }
 
@@ -84,7 +89,7 @@ h1 {
 img{
 	border-radius: 50%;
   width: 200px;
-  box-shadow: $shadow;
+  box-shadow: var(--shadow);
 }
 
 ul{
@@ -101,13 +106,13 @@ ul{
     float: left;
     margin: 0 2.5px;
     a{
-      color: lighten($colorBase, 1%);
+      color: var(--colorBaseLight);
       .fa-lg{
+        text-align: center;
+        font-size: 2.5em;
         @media only screen and (min-width: 1024px) {
           font-size: 1.5em;
         }
-        text-align: center;
-        font-size: 2.5em;
       }
     }
   }
